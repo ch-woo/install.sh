@@ -196,12 +196,12 @@ npm install -g ${NPMPACKAGES[@]}
 #   brew install unity-hub
 # fi
 
-echo
-echo -n "${RED}Install Figma? ${NC}[y/N]"
-read REPLY
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  brew install figma
-fi
+# echo
+# echo -n "${RED}Install Figma? ${NC}[y/N]"
+# read REPLY
+# if [[ $REPLY =~ ^[Yy]$ ]]; then
+#   brew install figma
+# fi
 
 # Cleanup
 echo
