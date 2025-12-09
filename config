@@ -5,43 +5,43 @@
 # Homebrew Casks: Applications installed via Homebrew Cask.
 # These are GUI applications available through Homebrew.
 CASKS=(
-  iterm2
-  google-chrome
-  arc
+  # iterm2
+  firefox
+  # arc
   visual-studio-code
-  spotify
+  # spotify
   vlc
-  dropbox
-  google-drive
-  sync
-  github
-  cyberduck
-  postman
+  # dropbox
+  # google-drive
+  # sync
+  # github
+  # cyberduck
+  # postman
   discord
-  microsoft-teams
-  silicon
-  qflipper
-  pieces
-  ollama
-  devtoys
-  the-unarchiver
-  cheatsheet
-  zenmap
-  tiled
-  arduino-ide
-  transmission
+  # microsoft-teams
+  # silicon
+  # qflipper
+  # pieces
+  # ollama
+  # devtoys
+  # the-unarchiver
+  # cheatsheet
+  # zenmap
+  # tiled
+  # arduino-ide
+  # transmission
 )
 
 # Homebrew Formulae: Command line tools installed via Homebrew.
 FORMULAE=(
-  speedtest-cli
+  # speedtest-cli
   tree
-  nmap
-  wget
-  git
+  # nmap
+  # wget
+  # git
   pinentry-mac
-  python
-  python-tk
+  # python
+  # python-tk
 )
 
 # NPM Packages: Global Node packages to be installed via NPM.
@@ -52,23 +52,23 @@ NPMPACKAGES=(
 # VSCode Extensions: Specifies the IDs of Visual Studio Code extensions to install.
 # Each ID corresponds to an extension on the Visual Studio Code Marketplace.
 VSCODE=(
-  "esbenp.prettier-vscode"
-  "GitHub.copilot"
-  "dsznajder.es7-react-js-snippets"
-  "ritwickdey.liveserver"
-  "github.vscode-pull-request-github"
-  "sourcegraph.cody-ai"
-  "eamodio.gitlens"
-  "meshintelligenttechnologiesinc.pieces-vscode"
-  "foxundermoon.shell-format"
+  # "esbenp.prettier-vscode"
+  # "GitHub.copilot"
+  # "dsznajder.es7-react-js-snippets"
+  # "ritwickdey.liveserver"
+  # "github.vscode-pull-request-github"
+  # "sourcegraph.cody-ai"
+  # "eamodio.gitlens"
+  # "meshintelligenttechnologiesinc.pieces-vscode"
+  # "foxundermoon.shell-format"
 )
 
 # App Store Apps: List of App Store app IDs to install via `mas` (Mac App Store CLI).
 # Each number corresponds to an application's ID in the App Store.
 APPSTORE=(
-  409201541  # Pages
-  409203825  # Numbers
-  1278508951 # Trello
+  # 409201541  # Pages
+  # 409203825  # Numbers
+  # 1278508951 # Trello
 )
 
 # SYSTEM SETTINGS: Commands to configure macOS system preferences and behaviors.
@@ -86,10 +86,10 @@ SETTINGS=(
   # Shows hidden files in Finder
   "defaults write com.apple.finder AppleShowAllFiles true"
   # Shows the path bar in Finder
-  "defaults write com.apple.finder ShowPathbar -bool true"
+  "defaults write com.apple.finder ShowPathbar -bool false"
   # Shows the status bar in Finder
-  "defaults write com.apple.finder ShowStatusBar -bool true"
-  # Makes new Finder windows open in the home directory
+  "defaults write com.apple.finder ShowStatusBar -bool false"
+  # Makes new Finder windows open in the home directory ($HOME)
   "defaults write com.apple.finder NewWindowTarget PfHm"
   # Sets the preferred view style in Finder to list view
   "defaults write com.apple.Finder FXPreferredViewStyle Nlsv"
@@ -109,16 +109,17 @@ SETTINGS=(
 # DOCK SETTINGS: Configuration for adding, removing, and replacing Dock items.
 DOCK_REPLACE=(
   # Format: "replacement_app_path|app_name_to_replace"
-  "/Applications/Google Chrome.app|Safari"
+  # "/Applications/Google Chrome.app|Safari"
 )
 
 DOCK_ADD=(
-  "/Applications/iTerm.app"
+  # "/Applications/iTerm.app"
+  "/Applications/Firefox.app"
   "/Applications/Visual Studio Code.app"
-  "/Applications/GitHub Desktop.app"
-  "/Applications/Spotify.app"
-  "/Applications/Discord.app"
-  "/Applications/Microsoft Teams (work or school).app"
+  # "/Applications/GitHub Desktop.app"
+  # "/Applications/Spotify.app"
+  # "/Applications/Discord.app"
+  # "/Applications/Microsoft Teams (work or school).app"
 )
 DOCK_REMOVE=(
   "Meldinger"

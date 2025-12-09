@@ -14,12 +14,12 @@ Welcome to the ultimate macOS setup script! Are you tired of the tedious process
 
 The script performs a variety of tasks to prepare a macOS machine for use:
 
-- Updates macOS to the latest version.
+<!-- - Updates macOS to the latest version. -->
 - Installs Homebrew, the package manager for macOS.
 - Installs essential software and applications through Homebrew casks and formulae.
 - Offers the choice between installing Node.js via NVM (Node Version Manager) or Homebrew.
 - Installs global NPM packages.
-- Provides options to install additional software, such as .NET, Firefox Developer Edition, PostgreSQL, MySQL, MongoDB, Epic & Steam, Unity Hub, and Figma.
+- Provides options to install additional software, such as <!-- .NET, --> Firefox Developer Edition<!-- , PostgreSQL, MySQL, MongoDB --><!-- , Epic & Steam, Unity Hub, --> and Figma.
 - Cleans up the installation environment by running `brew cleanup` and other maintenance commands.
 - Sets up Git with global username and email configurations.
 - Installs VSCode extensions.
