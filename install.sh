@@ -161,14 +161,6 @@ npm install -g ${NPMPACKAGES[@]}
 #   export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
 # fi
 
-echo
-echo -n "${RED}Install Firefox Developer Edition? ${NC}[y/N]"
-read REPLY
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  brew tap homebrew/cask-versions
-  brew install firefox-developer-edition
-fi
-
 # echo
 # echo -n "${RED}Install PosreSQL, MySQL & MongoDB? ${NC}[y/N]"
 # read REPLY
