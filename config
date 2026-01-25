@@ -10,13 +10,16 @@ CASKS=(
   discord
   firefox
   fork
-  jottacloud
+  glance-chamburr
+  # jottacloud
   local
   maccy
   mp3tag
-  nordvpn
+  # nordvpn
   obsidian
   prepros
+  protonvp
+  proton-drive
   rekordbox
   telegram
   visual-studio-code
@@ -71,8 +74,6 @@ SETTINGS=(
   "defaults write -g com.apple.trackpad.scaling 1.75"
   # Sets the Bluetooth mouse to two-button mode
   "defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode TwoButton"
-  # Sets the multi-touch mouse to two-button mode
-  "defaults write com.apple.AppleMultitouchMouse.plist MouseButtonMode TwoButton"
   # Shows all file extensions in Finder
   "defaults write -g AppleShowAllExtensions -bool true"
   # Shows hidden files in Finder
@@ -101,7 +102,7 @@ SETTINGS=(
 # DOCK SETTINGS: Configuration for adding, removing, and replacing Dock items.
 DOCK_REPLACE=(
   # Format: "replacement_app_path|app_name_to_replace"
-  # "/Applications/Google Chrome.app|Safari"
+  "/Applications/Firefox‚.app|Safari"
 )
 
 DOCK_ADD=(
