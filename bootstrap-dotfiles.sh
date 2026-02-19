@@ -23,34 +23,36 @@ DOTFILES_DIR="$(cd "$(dirname "$SCRIPT_PATH")" && pwd)"
 # Clean up any errant symlinks in the dotfiles directories that might cause loops
 for dir in dotfiles/scripts dotfiles/vscode; do
     if [ -d "$DOTFILES_DIR/$dir" ]; then
-        find "$DOTFILES_DIR/$dir" -maxdepth 1 -type l -exec rm {} \;
+        find "$DOTFILES_DIR/$dir" -maxdepth 1 -type l -delete
     fi
 done
-
-# Clean up any errant symlinks in the dotfiles directories that might cause loops
-for dir in dotfiles/scripts dotfiles/vscode; do
-    if [ -d "$DOTFILES_DIR/$dir" ]; then
-        echo "Cleanup: Finding symlinks in $DOTFILES_DIR/$dir"
-        find "$DOTFILES_DIR/$dir" -maxdepth 1 -type l -print -delete
-    fi
-done
-
-echo "Cleanup done. Checking..." 
-find dotfiles/scripts dotfiles/vscode -maxdepth 1 -type l 2>/dev/null | wc -l | xargs echo "Symlinks remaining:"
 
 # Helper: create (or replace) a symlink from $HOME/.<item> → $DOTFILES_DIR/dotfiles/<item>
 # Automatically adds a leading dot for the home directory destination
-# ----------------------------------------------------------------------
+# -----------------------------------------------------------------------
 link_file() {
     local item="$1"
     local src="$DOTFILES_DIR/dotfiles/$item"
     local dst="$HOME/.$item"
 
-    # Ensure the destination directory exists
-    mkdir -p "$(dirname "$dst")"
+    # Ensure the destination directory exists (but not for $dst itself)
+    # Only create the parent directory if needed
+    local parent_dir="$(dirname "$dst")"
+    if [ ! -d "$parent_dir" ]; then
+        mkdir -p "$parent_dir"
+    fi
 
-    # Force‑replace any existing file/symlink
-    ln -sf "$src" "$dst"
+    # Remove any existing symlink/file/directory at destination
+    if [[ -L "$dst" ]] || [[ -f "$dst" ]]; then
+        # It's a symlink or regular file - remove it
+        rm -f "$dst"
+    elif [[ -d "$dst" ]]; then
+        # It's a directory - this shouldn't happen, but remove it anyway
+        rm -rf "$dst"
+    fi
+    
+    # Create the new symlink
+    ln -s "$src" "$dst"
     echo "Linked $dst → $src"
 }
 
